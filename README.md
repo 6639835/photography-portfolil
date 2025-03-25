@@ -12,6 +12,7 @@ A modern, minimalist photography portfolio website built with Next.js and Tailwi
 ## Key Features
 
 - Gallery showcase with collections organized by theme
+- Collection-specific galleries
 - About page with photographer information
 - Contact form for inquiries
 - Smooth animations and transitions
@@ -23,7 +24,7 @@ A modern, minimalist photography portfolio website built with Next.js and Tailwi
 - **Next.js**: React framework with server-side rendering
 - **TypeScript**: Type safety and better developer experience
 - **Tailwind CSS**: Utility-first CSS framework for styling
-- **Framer Motion**: Animation library (can be added)
+- **Framer Motion**: Animation library for smooth transitions and effects
 
 ## Getting Started
 
@@ -48,25 +49,78 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 ## Project Structure
 
 - `/src/app`: Main application pages
+  - `/src/app/page.tsx`: Homepage with hero section and collections
+  - `/src/app/gallery/page.tsx`: Main gallery page
+  - `/src/app/gallery/[collection]/page.tsx`: Collection-specific gallery pages
+  - `/src/app/about/page.tsx`: About page
+  - `/src/app/contact/page.tsx`: Contact page
 - `/src/components`: Reusable components
-- `/public/images`: Photography images (placeholder gradients used in development)
+  - `/src/components/PhotoModal.tsx`: Fullscreen photo modal
+  - `/src/components/GalleryImage.tsx`: Gallery image component
+- `/public/images`: Photography images
 
-## Customization
+## Customization Guide
 
-### Adding Real Images
+### 1. Adding Your Photos
 
-Replace the placeholder gradients with actual images:
+Place your photos in the `/public/images/` directory:
 
-1. Add your images to the `/public/images` folder
-2. Update the image paths in the components
+- **Homepage Hero**: Add a hero image at `/public/images/hero.jpg`
+- **Featured Image**: Add a featured image at `/public/images/featured.jpg`
+- **Collection Covers**: Add collection cover images at `/public/images/nature-cover.jpg`, `/public/images/urban-cover.jpg`, etc.
+- **Gallery Photos**: Add gallery photos with appropriate names
 
-### Modifying Content
+For collection-specific photos, you can organize them in subdirectories:
+```
+/public/images/nature/nature-1.jpg
+/public/images/urban/urban-1.jpg
+etc.
+```
 
-Edit the content in each page file:
+### 2. Updating Collection Data
 
-- `src/app/page.tsx`: Homepage and gallery
-- `src/app/about/page.tsx`: About page 
-- `src/app/contact/page.tsx`: Contact page
+Edit the collections and photos in `src/app/gallery/[collection]/page.tsx`:
+
+```typescript
+// Collection data
+const collections = {
+  nature: {
+    title: 'Your Custom Title',
+    description: 'Your custom description'
+  },
+  // Add more collections...
+};
+
+// Photo data
+const allPhotos = {
+  nature: [
+    {
+      id: 'nature-1',
+      title: 'Your Photo Title',
+      description: 'Your photo description',
+      date: 'Month Year',
+      src: '/images/your-image-path.jpg',
+      alt: 'Accessibility description',
+    },
+    // Add more photos...
+  ],
+  // Add more collection photos...
+};
+```
+
+### 3. Customizing Your Profile
+
+Edit the About page in `src/app/about/page.tsx`:
+- Update your name, bio, and photography philosophy
+- Add your own profile photo
+- Customize your equipment list
+
+### 4. Styling
+
+The site uses Tailwind CSS for styling. You can customize:
+- Colors: Edit the color variables in `globals.css`
+- Typography: Update font styles in the Tailwind config
+- Layout: Modify spacing and grid layouts in individual components
 
 ## Deployment
 

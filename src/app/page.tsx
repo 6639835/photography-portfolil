@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 
 // Sample photo data - in a real app, this would come from a CMS or API
 const photoSeries = [
@@ -35,8 +36,14 @@ export default function Home() {
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-[1]" />
         <div className="absolute inset-0">
-          {/* This would be replaced with a real image in production */}
-          <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black" />
+          {/* Hero background image */}
+          <Image
+            src="/images/hero.jpg" 
+            alt="Photography hero image"
+            fill
+            priority
+            className="object-cover"
+          />
         </div>
         <div className="relative z-[2] flex flex-col items-center justify-center h-full px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-extralight tracking-wider mb-6">
@@ -54,17 +61,22 @@ export default function Home() {
           <h2 className="text-3xl font-light tracking-wide mb-12 text-center">COLLECTIONS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {photoSeries.map((series) => (
-              <div key={series.id} className="group cursor-pointer relative overflow-hidden">
+              <Link key={series.id} href={`/gallery/${series.id}`} className="group cursor-pointer relative overflow-hidden">
                 <div className="aspect-[4/3] w-full relative overflow-hidden bg-gray-900">
-                  {/* Placeholder - would use real image in production */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 
-                                gallery-image group-hover:opacity-90" />
+                  {/* Collection image */}
+                  <Image 
+                    src={series.coverImage}
+                    alt={series.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover gallery-image group-hover:opacity-90"
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="text-xl font-light tracking-wide mt-2">{series.title}</h3>
                   <p className="text-sm opacity-70 mt-1">{series.description}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -75,8 +87,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-light tracking-wide mb-12 text-center">FEATURED WORK</h2>
           <div className="aspect-[16/9] w-full relative overflow-hidden bg-gray-900">
-            {/* Placeholder for featured image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900" />
+            {/* Featured image */}
+            <Image
+              src="/images/featured.jpg"
+              alt="Featured photography work"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
           </div>
           <div className="mt-8 text-center">
             <h3 className="text-xl font-light tracking-wide">Mountain Reflections</h3>
