@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
+      <body suppressHydrationWarning className={`${inter.className} bg-black text-white`}>
         <header className="fixed w-full top-0 z-10 py-4 px-6 bg-black/80 backdrop-blur-sm">
           <nav className="max-w-7xl mx-auto flex items-center justify-between">
             <a href="/" className="text-xl font-light tracking-wider">PHOTOGRAPHY</a>
