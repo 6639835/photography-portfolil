@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
 
 // Sample photo data - in a real app, this would come from a CMS or API
 const photoSeries = [
@@ -47,10 +50,17 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const constraintsRef = useRef(null);
+  
   return (
-    <div>
+    <div ref={constraintsRef}>
       {/* Hero section */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <motion.section 
+        className="relative h-screen w-full overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[1]" />
         <div className="absolute inset-0">
           {/* Hero background image */}
@@ -98,10 +108,16 @@ export default function Home() {
             <path d="M12 5v14M19 12l-7 7-7-7"/>
           </svg>
         </div>
-      </section>
+      </motion.section>
 
       {/* Gallery section */}
-      <section className="py-32 px-6 bg-zinc-950">
+      <motion.section 
+        className="py-32 px-6 bg-zinc-950"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.div 
           className="max-w-7xl mx-auto"
           initial="hidden"
@@ -145,10 +161,16 @@ export default function Home() {
             ))}
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Featured photo section */}
-      <section className="py-32 bg-black relative overflow-hidden">
+      <motion.section 
+        className="py-32 bg-black relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-0" />
         <motion.div 
           className="max-w-7xl mx-auto px-6 relative z-10"
@@ -198,10 +220,16 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
       
       {/* Call to action */}
-      <section className="py-32 bg-zinc-950 relative">
+      <motion.section 
+        className="py-32 bg-zinc-950 relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.div 
           className="max-w-3xl mx-auto px-6 text-center"
           initial="hidden"
@@ -230,7 +258,7 @@ export default function Home() {
             </Link>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
     </div>
   );
 }
