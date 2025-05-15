@@ -11,7 +11,7 @@ const photos = [
     title: 'Mountain Reflections',
     description: 'The still waters of the mountain lake perfectly mirror the majesty of the peaks.',
     date: 'October 2023',
-    src: '/images/photo1.jpg',
+    src: '/images/gallery/photo1.jpg',
     alt: 'Mountain reflections in a lake',
   },
   {
@@ -19,7 +19,7 @@ const photos = [
     title: 'Urban Geometry',
     description: 'Abstract patterns in modern architecture create compelling visual rhythms.',
     date: 'November 2023',
-    src: '/images/photo2.jpg',
+    src: '/images/gallery/photo2.jpg',
     alt: 'Abstract patterns in modern architecture',
   },
   {
@@ -27,7 +27,7 @@ const photos = [
     title: 'Portrait in Natural Light',
     description: 'Soft natural light brings out the gentle expression in this portrait.',
     date: 'December 2023',
-    src: '/images/photo3.jpg',
+    src: '/images/gallery/photo3.jpg',
     alt: 'Portrait in natural light',
   },
   {
@@ -35,7 +35,7 @@ const photos = [
     title: 'Abstract Formations',
     description: 'Natural patterns create striking abstract compositions.',
     date: 'January 2024',
-    src: '/images/photo4.jpg',
+    src: '/images/gallery/photo4.jpg',
     alt: 'Abstract natural patterns',
   },
   {
@@ -43,7 +43,7 @@ const photos = [
     title: 'Coastal Dawn',
     description: 'First light illuminates the coastal landscape with a golden glow.',
     date: 'February 2024',
-    src: '/images/photo5.jpg',
+    src: '/images/gallery/photo5.jpg',
     alt: 'Coastal landscape at dawn',
   },
   {
@@ -51,7 +51,7 @@ const photos = [
     title: 'Urban Portrait',
     description: 'City lights create a dramatic backdrop for this atmospheric portrait.',
     date: 'March 2024',
-    src: '/images/photo6.jpg',
+    src: '/images/gallery/photo6.jpg',
     alt: 'Portrait with city lights',
   }
 ];
