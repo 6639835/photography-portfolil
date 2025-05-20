@@ -12,12 +12,24 @@ module.exports = {
           50: '#f9fafb',
           100: '#f4f5f7',
           200: '#e5e7eb',
+          800: '#1c1c1e',
           900: '#111112',
         },
         'photo-accent': {
-          300: '#d4b88b',
-          400: '#c4a87b',
-          500: '#b4986b',
+          300: '#d4af7d',
+          400: '#c49f6d',
+          500: '#b48f5d',
+          600: '#a47f4d',
+        },
+        'photo-teal': {
+          300: '#78a0b4',
+          400: '#6890a4',
+          500: '#587f94',
+        },
+        'photo-dark': {
+          950: '#080808',
+          975: '#050505',
+          990: '#030303',
         },
       },
       fontFamily: {
@@ -38,8 +50,40 @@ module.exports = {
       },
       backgroundImage: {
         'grain-pattern': "url('/images/grain.png')",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 90deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      backgroundColor: {
+        'blur-overlay': 'rgba(0, 0, 0, 0.7)',
+      },
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.backdrop-blur-xs': {
+          'backdrop-filter': 'blur(2px)',
+        },
+        '.backdrop-blur-sm': {
+          'backdrop-filter': 'blur(4px)',
+        },
+        '.backdrop-blur-md': {
+          'backdrop-filter': 'blur(8px)',
+        },
+        '.backdrop-blur-lg': {
+          'backdrop-filter': 'blur(16px)',
+        },
+        '.backdrop-blur-xl': {
+          'backdrop-filter': 'blur(24px)',
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 } 
