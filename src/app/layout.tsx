@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -25,20 +26,20 @@ export default function RootLayout({
         <header className="fixed w-full top-0 z-50 py-5 px-6 transition-all duration-300 backdrop-blur-md">
           <div className="absolute inset-0 bg-black/30 backdrop-blur-md"></div>
           <nav className="max-w-7xl mx-auto flex items-center justify-between relative z-10">
-            <a href="/" className="text-xl font-light tracking-[0.15em] hover:text-photo-accent-300 transition-colors group flex items-center">
+            <Link href="/" className="text-xl font-light tracking-[0.15em] hover:text-photo-accent-300 transition-colors group flex items-center">
               <span className="sr-only">Photography Portfolio</span>
               <span className="text-gradient-gold mr-2 opacity-90 group-hover:opacity-100">LENS</span>
               <span aria-hidden="true" className="transition-all duration-300">PHOTOGRAPHY</span>
               <span className="h-4 w-[1px] bg-photo-accent-300/30 mx-2"></span>
-            </a>
+            </Link>
             <ul className="hidden md:flex space-x-10 text-sm tracking-wider uppercase">
               <li>
-                <a 
+                <Link 
                   href="/gallery" 
                   className="opacity-80 hover:opacity-100 transition-opacity hover:text-photo-accent-300 py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-photo-accent-400 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300"
                 >
                   Gallery
-                </a>
+                </Link>
               </li>
               <li>
                 <a 
@@ -104,7 +105,7 @@ export default function RootLayout({
               <div className="md:col-span-3 md:col-start-7">
                 <h4 className="text-sm uppercase tracking-widest mb-6 text-white/80 font-medium">Navigation</h4>
                 <ul className="space-y-3 text-sm text-white/60">
-                  <li><a href="/gallery" className="hover:text-photo-accent-300 transition-colors inline-block py-1 btn-hover">Gallery</a></li>
+                  <li><Link href="/gallery" className="hover:text-photo-accent-300 transition-colors inline-block py-1 btn-hover">Gallery</Link></li>
                   <li><a href="/about" className="hover:text-photo-accent-300 transition-colors inline-block py-1 btn-hover">About</a></li>
                   <li><a href="/contact" className="hover:text-photo-accent-300 transition-colors inline-block py-1 btn-hover">Contact</a></li>
                 </ul>

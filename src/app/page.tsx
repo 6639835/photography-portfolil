@@ -560,7 +560,7 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <div className="absolute inset-0 bg-[url('/images/grain.png')] opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-grain-pattern opacity-10 mix-blend-overlay"></div>
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <motion.div

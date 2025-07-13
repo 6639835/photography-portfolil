@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PhotoModal from '@/components/PhotoModal';
-import Image from 'next/image';
 import GalleryImage from '@/components/GalleryImage';
 
 // Sample photo data - in a real app, this would come from a CMS or API

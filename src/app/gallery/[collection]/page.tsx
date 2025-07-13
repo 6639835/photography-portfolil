@@ -168,9 +168,9 @@ const allPhotos = {
 export default function CollectionPage() {
   const params = useParams();
   const [collection, setCollection] = useState<string>('');
-  const [collectionData, setCollectionData] = useState<any>(null);
-  const [photos, setPhotos] = useState<any[]>([]);
-  const [selectedPhoto, setSelectedPhoto] = useState<any>(null);
+  const [collectionData, setCollectionData] = useState<{title: string, description: string} | null>(null);
+  const [photos, setPhotos] = useState<{id: string, title: string, description: string, date: string, src: string, alt: string}[]>([]);
+  const [selectedPhoto, setSelectedPhoto] = useState<{id: string, title: string, description: string, date: string, src: string, alt: string} | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -189,7 +189,7 @@ export default function CollectionPage() {
     }
   }, [params.collection]);
 
-  const openModal = (photo: any) => {
+  const openModal = (photo: {id: string, title: string, description: string, date: string, src: string, alt: string}) => {
     setSelectedPhoto(photo);
     setModalOpen(true);
   };
