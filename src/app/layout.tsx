@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body suppressHydrationWarning className={`${inter.variable} font-sans bg-black text-white min-h-screen selection:bg-photo-accent-400/30 selection:text-white`}>
         <div className="fixed inset-0 bg-grain-pattern opacity-[0.03] pointer-events-none z-[1] mix-blend-overlay"></div>
-        <header className="fixed w-full top-0 z-20 py-5 px-6 transition-all duration-300 backdrop-blur-md">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
+        <header className="fixed w-full top-0 z-50 py-5 px-6 transition-all duration-300 backdrop-blur-md">
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-md"></div>
           <nav className="max-w-7xl mx-auto flex items-center justify-between relative z-10">
             <a href="/" className="text-xl font-light tracking-[0.15em] hover:text-photo-accent-300 transition-colors group flex items-center">
               <span className="sr-only">Photography Portfolio</span>

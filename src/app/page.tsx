@@ -168,12 +168,13 @@ export default function Home() {
     <div ref={constraintsRef}>
       {/* Hero section with enhanced parallax and animations */}
       <motion.section 
-        className="relative h-screen w-full overflow-hidden"
+        className="relative hero-full-screen w-full overflow-hidden -mt-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/30 to-black/75 z-[1]" />
+        <div className="absolute inset-0 hero-vignette z-[1]" />
         <div className="absolute inset-0">
           {/* Hero background image with enhanced parallax */}
           <motion.div
@@ -188,16 +189,18 @@ export default function Home() {
               alt="Photography hero image"
               fill
               priority
-              className="object-cover"
+              className="object-cover object-center"
+              sizes="100vw"
             />
-            {/* Overlay texture */}
-            <div className="absolute inset-0 bg-[url('/images/grain.png')] opacity-10 mix-blend-overlay"></div>
+            {/* Enhanced overlay with subtle gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
           </motion.div>
         </div>
         
-        {/* Cinematic bars */}
-        <div className="absolute top-0 w-full h-[5vh] bg-black z-[2]"></div>
-        <div className="absolute bottom-0 w-full h-[5vh] bg-black z-[2]"></div>
+        {/* Cinematic bars - more subtle */}
+        <div className="absolute top-0 w-full h-[3vh] bg-gradient-to-b from-black to-transparent z-[2]"></div>
+        <div className="absolute bottom-0 w-full h-[3vh] bg-gradient-to-t from-black to-transparent z-[2]"></div>
         
         {/* Floating particles/light effect */}
         <div className="absolute inset-0 z-[1] pointer-events-none">
@@ -231,7 +234,7 @@ export default function Home() {
         </div>
         
         <motion.div 
-          className="relative z-[2] flex flex-col items-center justify-center h-full px-4 text-center"
+          className="relative z-[2] flex flex-col items-center justify-center hero-full-screen px-4 text-center pt-20"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
@@ -242,7 +245,7 @@ export default function Home() {
           >
             <SplitText 
               text="IMMERSIVE" 
-              className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.2em] text-gradient-dynamic"
+              className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.2em] text-gradient-dynamic hero-text-glow"
             />
           </motion.div>
           
@@ -252,7 +255,7 @@ export default function Home() {
           >
             <SplitText 
               text="PHOTOGRAPHY" 
-              className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.2em]"
+              className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.2em] hero-text-glow"
             />
           </motion.div>
           

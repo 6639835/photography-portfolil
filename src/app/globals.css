@@ -19,6 +19,32 @@ body {
   overflow-x: hidden;
 }
 
+/* Ensure full viewport coverage */
+.hero-full-screen {
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Better mobile viewport handling */
+@supports (height: 100dvh) {
+  .hero-full-screen {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+}
+
+/* Vignette effect for hero section */
+.hero-vignette {
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* Enhanced text gradient for hero */
+.hero-text-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(212, 175, 125, 0.1);
+}
+
 /* Custom animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }
